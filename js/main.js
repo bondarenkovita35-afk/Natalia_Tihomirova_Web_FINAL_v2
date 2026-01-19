@@ -15,7 +15,7 @@ const i18n = {
     studio_line: "Skapad professionellt av VS LiteCode Studio — klicka för att besöka."
   },
   en: {
-    role: "Team Manager",
+    role: "Teamleader",
     subtitle: "Team Leader / Warehouse & Logistics · Team Manager candidate",
     nav_letter: "Personal Letter",
     nav_cv: "CV",
