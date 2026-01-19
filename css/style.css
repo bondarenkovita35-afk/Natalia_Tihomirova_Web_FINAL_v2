@@ -1,0 +1,245 @@
+
+:root{
+  --bg1:#0f2f28;           /* deep green */
+  --bg2:#0b2420;
+  --card:hsl(147, 88%, 17%);          /* warm light */
+  --card2:#788d3b;
+  --text:#10201b;
+  --muted:#4b5f57;
+  --border:rgba(16,32,27,.10);
+  --shadow:0 18px 50px rgba(0,0,0,.25);
+
+  --accent:#7b1e2b;        /* burgundy */
+  --accent2:#a12b3c;
+  --accentSoft:rgba(123,30,43,.12);
+
+  --chip:#0f3a31;
+  --chipText:#6febbe;
+
+  --radius:22px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color:var(--card);
+  background:
+    radial-gradient(900px 600px at 18% 10%, rgba(255,255,255,.10) 0%, transparent 55%),
+    radial-gradient(700px 500px at 80% 0%, rgba(161,43,60,.18) 0%, transparent 60%),
+    linear-gradient(180deg, var(--bg1) 0%, var(--bg2) 70%);
+}
+
+.container{width:min(1200px, 92vw); margin:0 auto}
+
+.header{
+  position:sticky; top:0; z-index:10;
+  background:rgba(12,30,26,.72);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,.08);
+}
+.header__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 0;
+  gap:14px;
+}
+
+.brand{display:flex; align-items:center; gap:12px}
+.brand__dot{
+  width:12px; height:12px; border-radius:50%;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow:0 0 0 6px rgba(161,43,60,.18);
+}
+.brand__name{
+  font-family:"Playfair Display", serif;
+  font-weight:700;
+  font-size:18px;
+  line-height:1.1;
+}
+.brand__role{color:rgba(228, 185, 143, 0.85); font-size:12px}
+
+.actions{display:flex; align-items:center; gap:10px; flex-wrap:wrap; justify-content:flex-end}
+
+.btn{
+  display:inline-flex; align-items:center; justify-content:center;
+  padding:10px 14px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.14);
+  text-decoration:none;
+  color:var(--card);
+  font-weight:600;
+  font-size:13px;
+  transition:transform .15s ease, filter .15s ease, background .15s ease, border-color .15s ease;
+  white-space:nowrap;
+}
+.btn:hover{transform:translateY(-1px); filter:brightness(1.05)}
+.btn--primary{
+  border-color:transparent;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  box-shadow:0 10px 22px rgba(161,43,60,.28);
+}
+.btn--ghost{background:rgba(255,255,255,.06)}
+.btn--soft{
+  background:rgba(245,242,239,.10);
+  border-color:rgba(245,242,239,.16);
+}
+.btn--wide{width:100%}
+
+.toggle{
+  display:flex;
+  padding:4px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+}
+.toggle__btn{
+  border:0;
+  background:transparent;
+  color:rgba(245,242,239,.88);
+  font-weight:700;
+  padding:7px 10px;
+  border-radius:999px;
+  cursor:pointer;
+  font-size:12px;
+}
+.toggle__btn.is-active{
+  color:#0b2420;
+  background:linear-gradient(135deg, #89dfbc, #ffffff);
+}
+
+.layout{
+  display:grid;
+  grid-template-columns: 380px 1fr;
+  gap:20px;
+  padding:22px 0 30px;
+}
+
+.card{
+  background:linear-gradient(180deg, var(--card) 0%, #aecaa9 100%);
+  color:var(--text);
+  border:1px solid var(--border);
+  border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+.card--soft{
+  background:rgba(245,242,239,.08);
+  color:var(--card);
+  border:1px solid rgba(255,255,255,.10);
+  box-shadow:none;
+}
+
+.sidebar{display:flex; flex-direction:column; gap:16px}
+.card--profile{overflow:hidden}
+.profile__photo{
+  width:100%;
+  height:420px;
+  object-fit:contain;
+  background:#7e9684;
+  display:block;
+}
+.profile__meta{padding:16px 16px 18px}
+.profile__name{
+  font-family:"Playfair Display", serif;
+  margin:0 0 6px;
+  font-size:26px;
+  color:var(--text);
+}
+.profile__subtitle{
+  margin:0 0 14px;
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.35;
+}
+.profile__cta{display:grid; gap:10px}
+
+.chips{padding:14px}
+.chips__title{font-weight:800; font-size:12px; letter-spacing:.06em; text-transform:uppercase; margin-bottom:10px}
+.chips__wrap{display:flex; flex-wrap:wrap; gap:10px}
+.chip{
+  display:inline-flex;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.14);
+  color:var(--card);
+  text-decoration:none;
+  font-weight:700;
+  font-size:12px;
+}
+.chip:hover{filter:brightness(1.08)}
+
+.content{display:flex; flex-direction:column; gap:16px}
+
+.card__head{padding:16px 16px 0}
+.card__title{
+  margin:0;
+  font-family:"Playfair Display", serif;
+  font-size:20px;
+}
+.card__sub{
+  margin:8px 0 0;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.doc{
+  margin:0;
+  padding:16px;
+  white-space:pre-line;
+  word-break: normal;
+  overflow-wrap: anywhere;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size:13px;
+  line-height:1.45;
+  color:#111;
+}
+
+.langblock.is-hidden{display:none}
+
+.footer{
+  padding:20px 0 34px;
+}
+.studio{
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:14px 16px;
+  border-radius:18px;
+  text-decoration:none;
+  background:rgba(255,255,255,.07);
+  border:1px solid rgba(255,255,255,.12);
+  color:var(--card);
+  transition:transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.studio:hover{
+  transform:translateY(-2px);
+  filter:brightness(1.12);
+  box-shadow:0 18px 40px rgba(0,0,0,.25);
+}
+.studio__logo{width:42px; height:42px; border-radius:50%; object-fit:cover; box-shadow:0 0 0 4px rgba(161,43,60,.22)}
+.studio__title{font-weight:900; letter-spacing:.02em}
+.studio__sub{font-size:12px; color:rgba(245,242,239,.85)}
+.studio__arrow{margin-left:auto; font-size:18px; opacity:.9}
+
+.letter{padding:22px 0 30px}
+.back{
+  color:rgba(245,242,239,.92);
+  text-decoration:none;
+  font-weight:700;
+  padding:8px 10px;
+  border-radius:999px;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.10);
+}
+.back:hover{filter:brightness(1.06)}
+
+@media (max-width: 980px){
+  .layout{grid-template-columns:1fr}
+  .profile__photo{height:320px}
+}
+@media (max-width: 520px){
+  .brand__name{font-size:16px}
+  .btn{font-size:12px; padding:9px 12px}
+  .doc{font-size:12px}
+}
